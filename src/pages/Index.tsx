@@ -105,6 +105,7 @@ const Index = () => {
                 src={BRAND_IMG}
                 alt="FindAd — помогаем бизнесу расти"
                 className="h-[380px] w-full rounded-2xl object-cover md:h-[460px]"
+                style={{ objectPosition: '75% center' }}
               />
               <div className="absolute bottom-6 left-6 right-6 glass rounded-2xl p-4">
                 <p className="flex items-center gap-2 text-sm text-muted-foreground">

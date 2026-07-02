@@ -26,6 +26,13 @@ const tasks = [
   },
 ];
 
+const directions = [
+  { icon: 'Search', title: 'Анализ данных' },
+  { icon: 'Megaphone', title: 'Продвижение бренда' },
+  { icon: 'Users', title: 'Привлечение клиентов' },
+  { icon: 'TrendingUp', title: 'Оптимизация продаж' },
+];
+
 const perks = [
   { icon: 'Wifi', title: 'Полная удалёнка', text: 'Работайте из любой точки — офис не нужен.' },
   { icon: 'Laptop', title: 'Минимум техники', text: 'Компьютер и стабильный интернет — вот и всё.' },
@@ -40,15 +47,15 @@ const Index = () => {
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
         <div
           className="liquid-blob animate-liquid"
-          style={{ width: 620, height: 620, top: '-10%', left: '-8%', background: 'hsl(165 90% 50%)' }}
+          style={{ width: 620, height: 620, top: '-10%', left: '-8%', background: 'hsl(265 85% 55%)' }}
         />
         <div
           className="liquid-blob animate-liquid"
-          style={{ width: 520, height: 520, bottom: '-12%', right: '-6%', background: 'hsl(190 95% 55%)', animationDelay: '-7s' }}
+          style={{ width: 520, height: 520, bottom: '-12%', right: '-6%', background: 'hsl(280 80% 55%)', animationDelay: '-7s' }}
         />
         <div
           className="liquid-blob animate-liquid"
-          style={{ width: 460, height: 460, top: '40%', left: '55%', background: 'hsl(210 90% 55%)', animationDelay: '-14s' }}
+          style={{ width: 460, height: 460, top: '40%', left: '55%', background: 'hsl(250 85% 50%)', animationDelay: '-14s' }}
         />
         <div className="absolute inset-0 bg-background/60" />
       </div>
@@ -57,8 +64,8 @@ const Index = () => {
       <header className="relative z-20">
         <div className="container flex items-center justify-between py-6">
           <div className="flex items-center gap-2 font-display text-2xl font-700 tracking-wide">
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary text-primary-foreground">
-              <Icon name="Sparkles" size={18} />
+            <span className="grid h-9 w-9 place-items-center rounded-full bg-primary/15 text-primary ring-1 ring-primary/40">
+              <Icon name="Moon" size={18} />
             </span>
             FindAd
           </div>
@@ -108,9 +115,33 @@ const Index = () => {
                 className="h-[380px] w-full rounded-2xl object-cover md:h-[460px]"
               />
               <div className="absolute bottom-6 left-6 right-6 glass rounded-2xl p-4">
-                <p className="text-sm text-muted-foreground">Формат работы</p>
+                <p className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Icon name="Moon" size={14} className="text-primary" />
+                  Помогаем бизнесу расти осознанно
+                </p>
                 <p className="font-display text-xl font-600">Удалённо · через Telegram</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Directions */}
+      <section className="relative z-10">
+        <div className="container pb-8">
+          <div className="glass-strong rounded-3xl p-8 md:p-10">
+            <p className="mb-8 text-center text-sm text-muted-foreground">
+              FindAd помогает бизнесу расти через аналитику, стратегию и современные цифровые инструменты
+            </p>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {directions.map((d) => (
+                <div key={d.title} className="flex items-center gap-3">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
+                    <Icon name={d.icon} size={22} />
+                  </span>
+                  <span className="font-display text-lg font-600">{d.title}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -164,8 +195,10 @@ const Index = () => {
               <p className="font-display text-sm uppercase tracking-[0.3em] text-primary">О компании</p>
               <h2 className="mt-3 font-display text-4xl font-700 md:text-5xl">FindAd</h2>
               <p className="mt-6 text-lg text-muted-foreground">
-                Мы — растущий сервис с увеличивающимся числом клиентов. Ищем человека, который
-                возьмёт на себя общение с ними, чтобы каждый получал быстрый и качественный ответ.
+                Мы — небольшая команда специалистов, которая помогает бизнесу расти за счёт
+                аналитики, стратегии и современных цифровых инструментов. С ростом числа клиентов
+                ищем человека, который возьмёт на себя общение с ними — чтобы каждый получал быстрый
+                и качественный ответ.
               </p>
               <a
                 href={TG_CHANNEL}
